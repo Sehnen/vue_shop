@@ -12,6 +12,11 @@ import axios from "axios"
 Vue.prototype.$http=axios
 //设置根路径
 axios.defaults.baseURL='http://www.ysqorz.top:8888/api/private/v1/'
+//设置拦截器
+axios.interceptors.request.use(config=>{
+  config.headers.Authorization=window.sessionStorage.getItem('token')
+  return config
+})
 Vue.config.productionTip = false
 
 new Vue({
