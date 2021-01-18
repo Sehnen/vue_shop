@@ -37,8 +37,8 @@
             </template>
 
           <!--二级菜单-->
-              <el-menu-item :index="'/'+children.path" v-for="children in item.children" :key="children.id"
-               @click="saveNavState('/'+children.path)">
+              <el-menu-item :index="'/home/'+children.path" v-for="children in item.children" :key="children.id"
+               @click="saveNavState('/home/'+children.path)">
                 <template slot="title">
                   <i class="el-icon-menu"></i>
                   <span>{{children.authName}}</span>

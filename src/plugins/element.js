@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import {Button, Switch, Tooltip} from 'element-ui'
+import {Button, Dialog, Switch, Tag, Tooltip, Tree} from 'element-ui'
 import {Form,FormItem} from "element-ui";
 import {Input} from "element-ui";
 import {Message,Container,Header,Main,Aside,Menu,Submenu,
@@ -13,6 +13,7 @@ import {Message,Container,Header,Main,Aside,Menu,Submenu,
     Table,
     TableColumn,
     Pagination,
+    MessageBox
 } from "element-ui";
 
 Vue.use(Button)
@@ -38,4 +39,8 @@ Vue.use(TableColumn)
 Vue.use(Switch)
 Vue.use(Pagination)
 Vue.use(Tooltip)
+Vue.use(Dialog)
+Vue.use(Tag)
+Vue.use(Tree)
 Vue.prototype.$message=Message
+Vue.prototype.$confirm=MessageBox.confirm
