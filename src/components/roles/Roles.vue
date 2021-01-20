@@ -52,7 +52,8 @@
       <el-dialog
           title="提示"
           :visible.sync="rightDialogVisible"
-          width="30%">
+          width="30%"
+          @close="setDialogClosed">
         <el-tree :data="rightsList" :props="defaultProps" :default-checked-keys="selectKeys"  show-checkbox node-key="id" default-expand-all></el-tree>
         <span slot="footer" class="dialog-footer">
     <el-button @click="rightDialogVisible = false">取 消</el-button>
@@ -75,8 +76,6 @@ export default {
       defaultProps:{
         label:'authName',
         children:'children'
-
-
       },
       selectKeys:[]
     }
@@ -125,6 +124,10 @@ export default {
      item.children.forEach(item1=>{
        this.getLeafNode(item1,arr)
      })
+    },
+  //  清空分配权限
+    setDialogClosed(){
+     this.rightsList=[]
     }
   }
 
